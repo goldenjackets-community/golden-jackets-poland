@@ -1102,54 +1102,54 @@ function chatAnswer(key) {
 
 var currentLang = localStorage.getItem('lang') || 'en';
 var translations = {
-  'Welcome to ': 'Bem-vindo ao ',
-  'Already a Golden Jacket holder from Poland?': 'Já é um Golden Jacket do Polska?',
-  'Get in touch': 'Entre em contato',
-  'About Us': 'Sobre Nós',
+  'Welcome to ': 'Witamy w ',
+  'Already a Golden Jacket holder from Poland?': 'Masz już Golden Jacket z Polski?',
+  'Get in touch': 'Skontaktuj się',
+  'About Us': 'O nas',
   'We are the Golden Jackets from Poland — a select group of professionals recognized by Amazon Web Services with the highest distinction in the AWS community worldwide. The Golden Jacket is awarded to those who have earned all active AWS certifications and demonstrated exceptional contribution through technical leadership, content creation, community building, and innovation. Our mission is to share knowledge, inspire the next generation of cloud leaders, and strengthen Poland\'s presence on the global AWS stage.':
-    'Somos os Golden Jackets do Polska — um grupo seleto de profissionais reconhecidos pela Amazon Web Services com a mais alta distinção na comunidade AWS mundial. O Golden Jacket é concedido àqueles que conquistaram todas as certificações AWS ativas e demonstraram contribuição excepcional por meio de liderança técnica, criação de conteúdo, construção de comunidade e inovação. Nossa missão é compartilhar conhecimento, inspirar a próxima geração de líderes em nuvem e fortalecer a presença do Polska no cenário global da AWS.',
+    'Jesteśmy Golden Jackets z Polski — elitarna grupa profesjonalistów wyróżnionych przez Amazon Web Services najwyższym odznaczeniem w społeczności AWS na świecie. Golden Jacket przyznawany jest tym, którzy zdobyli wszystkie aktywne certyfikaty AWS i wykazali się wyjątkowym wkładem poprzez przywództwo techniczne, tworzenie treści, budowanie społeczności i innowacje. Naszą misją jest dzielenie się wiedzą, inspirowanie następnego pokolenia liderów chmury i wzmacnianie obecności Polski na globalnej scenie AWS.',
   'The Golden Jackets Poland community celebrates cloud leaders who are passionate about learning and committed to helping others succeed. Our members have achieved all active AWS certifications and actively support others on their cloud journey.':
-    'A comunidade Golden Jackets Poland celebra líderes em nuvem apaixonados por aprendizado e comprometidos em ajudar outros a ter sucesso. Nossos membros conquistaram todas as certificações AWS ativas e apoiam ativamente outros em sua jornada na nuvem.',
-  'Members': 'Membros',
+    'Społeczność Golden Jackets Poland celebruje liderów chmury, którzy są pasjonatami nauki i pomagają innym osiągnąć sukces. Nasi członkowie zdobyli wszystkie aktywne certyfikaty AWS i aktywnie wspierają innych w ich drodze do chmury.',
+  'Members': 'Członkowie',
   'Where we are': 'Gdzie jesteśmy',
-  'Golden Jackets across Poland': 'Golden Jackets pelo Polska',
-  'Every Golden Jacket holds all active AWS Certifications': 'Todo Golden Jacket possui todas as Certificações AWS ativas',
-  '12 certifications · 4 levels · Complete mastery': '12 certificações · 4 níveis · Domínio completo',
-  'Filter by State:': 'Filtrar por Estado:',
-  'Events': 'Eventos',
-  'Stay tuned for upcoming community events, meetups, and workshops.': 'Fique ligado nos próximos eventos, meetups e workshops da comunidade.',
-  'Coming Soon': 'Em Breve',
-  'We\'re planning something special. Follow us on LinkedIn to be the first to know!': 'Estamos planejando algo especial. Siga-nos no LinkedIn para ser o primeiro a saber!',
-  'Join the journey': 'Junte-se à jornada',
-  'Follow us for insights, events, and stories from the Polish Golden Jacket community.': 'Siga-nos para insights, eventos e histórias da comunidade Golden Jacket do Polska.',
-  'Follow on LinkedIn': 'Seguir no LinkedIn',
-  'Our Soundtrack': 'Nossa Trilha Sonora',
-  'What Golden Jackets listen to while conquering certifications. 🎸': 'O que os Golden Jackets ouvem enquanto conquistam certificações. 🎸',
-  'Founder': 'Fundador',
-  'Co-Founder': 'Co-Fundador',
-  'Member': 'Membro',
-  'Certified on': 'Certificado em'
+  'Golden Jackets across Poland': 'Golden Jackets w Polsce',
+  'Every Golden Jacket holds all active AWS Certifications': 'Każdy Golden Jacket posiada wszystkie aktywne certyfikaty AWS',
+  '12 certifications · 4 levels · Complete mastery': '12 certyfikatów · 4 poziomy · Pełne opanowanie',
+  'Filter by State:': 'Filtruj wg województwa:',
+  'Events': 'Wydarzenia',
+  'Stay tuned for upcoming community events, meetups, and workshops.': 'Bądź na bieżąco z nadchodzącymi wydarzeniami, meetupami i warsztatami społeczności.',
+  'Coming Soon': 'Wkrótce',
+  'We\'re planning something special. Follow us on LinkedIn to be the first to know!': 'Planujemy coś specjalnego. Śledź nas na LinkedIn, aby być pierwszym, który się dowie!',
+  'Join the journey': 'Dołącz do podróży',
+  'Follow us for insights, events, and stories from the Polish Golden Jacket community.': 'Śledź nas, aby poznać spostrzeżenia, wydarzenia i historie ze społeczności Golden Jacket w Polsce.',
+  'Follow on LinkedIn': 'Śledź na LinkedIn',
+  'Our Soundtrack': 'Nasza ścieżka dźwiękowa',
+  'What Golden Jackets listen to while conquering certifications. 🎸': 'Co słuchają Golden Jackets podczas zdobywania certyfikatów. 🎸',
+  'Founder': 'Założyciel',
+  'Co-Founder': 'Współzałożyciel',
+  'Member': 'Członek',
+  'Certified on': 'Certyfikat od'
 };
 
 function toggleLang() {
-  currentLang = currentLang === 'en' ? 'pt' : 'en';
+  currentLang = currentLang === 'en' ? 'pl' : 'en';
   localStorage.setItem('lang', currentLang);
   applyLang();
 }
 
 function applyLang() {
   var btns = document.querySelectorAll('.lang-toggle');
-  btns.forEach(function(b) { b.innerHTML = currentLang === 'en' ? '<img src="https://flagcdn.com/w40/pl.png" width="20" height="14" alt="PT" class="flag-img">' : '<img src="https://flagcdn.com/w40/us.png" width="20" height="14" alt="EN" class="flag-img">'; });
+  btns.forEach(function(b) { b.innerHTML = currentLang === 'en' ? '<img src="https://flagcdn.com/w40/pl.png" width="20" height="14" alt="PL" class="flag-img">' : '<img src="https://flagcdn.com/w40/us.png" width="20" height="14" alt="EN" class="flag-img">'; });
 
   var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
   var node;
-  if (currentLang === 'pt') {
+  if (currentLang === 'pl') {
     while (node = walker.nextNode()) {
       var text = node.textContent.trim();
       for (var en in translations) {
         if (text === en) { node.textContent = node.textContent.replace(en, translations[en]); break; }
       }
-      if (text.startsWith('Certified on')) { node.textContent = node.textContent.replace('Certified on', 'Certificado em'); }
+      if (text.startsWith('Certified on')) { node.textContent = node.textContent.replace('Certified on', 'Certyfikat od'); }
     }
   } else {
     var reverse = {};
@@ -1159,12 +1159,12 @@ function applyLang() {
       for (var pt in reverse) {
         if (text === pt) { node.textContent = node.textContent.replace(pt, reverse[pt]); break; }
       }
-      if (text.startsWith('Certificado em')) { node.textContent = node.textContent.replace('Certificado em', 'Certified on'); }
+      if (text.startsWith('Certyfikat od')) { node.textContent = node.textContent.replace('Certyfikat od', 'Certified on'); }
     }
   }
 }
 
-if (currentLang === 'pt') {
+if (currentLang === 'pl') {
   window.addEventListener('DOMContentLoaded', function() {
     applyLang();
     document.querySelectorAll('.lang-toggle').forEach(function(b) { b.innerHTML = '<img src="https://flagcdn.com/w40/us.png" width="20" height="14" alt="EN" class="flag-img">'; });
