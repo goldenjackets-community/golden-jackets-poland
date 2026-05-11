@@ -1,4 +1,4 @@
-# 🏆 Golden Jackets Brazil — Backlog
+# 🏆 Golden Jackets Poland — Backlog
 
 ## ✅ Concluído
 
@@ -114,8 +114,8 @@
 - [ ] Migrar Lambdas para IaC (CDK ou SAM)
 - [ ] Testes unitários nas Lambdas
 - [ ] EventBridge: lembrete automático para pendentes (a cada 24h)
-- [ ] Cognito custom domain (auth.goldenjacketsbrazil.com)
-- [ ] SES custom domain (noreply@goldenjacketsbrazil.com)
+- [ ] Cognito custom domain (auth.goldenjackets.pl)
+- [ ] SES custom domain (noreply@goldenjackets.pl)
 - [x] Monitoramento de custos (Budget alarm $10/mês) — 10/05/2026
 
 ### Site

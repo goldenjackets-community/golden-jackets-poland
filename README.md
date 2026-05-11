@@ -1,8 +1,8 @@
-# 🏆 Golden Jackets Brazil
+# 🏆 Golden Jackets Poland
 
-Community website celebrating Brazilian professionals who earned all active AWS certifications.
+Community website celebrating Polish professionals who earned all active AWS certifications.
 
-🔗 **[goldenjacketsbrazil.com](https://goldenjacketsbrazil.com)**
+🔗 **[goldenjackets.pl](https://goldenjackets.pl)**
 
 ## Architecture
 
@@ -132,7 +132,7 @@ Community website celebrating Brazilian professionals who earned all active AWS 
 - Input validation in all Lambdas (sanitize name, email, URL)
 - Cognito authentication for Members Lounge with auto-refresh token (30 days)
 - Admin Console restricted to authorized email via JWT
-- CORS restricted to goldenjacketsbrazil.com domain
+- CORS restricted to goldenjackets.pl domain
 - S3 buckets with versioning enabled
 - No secrets stored in repository
 - GitHub Actions uses OIDC federation (no static credentials)
@@ -170,9 +170,9 @@ Community website celebrating Brazilian professionals who earned all active AWS 
 
 ## Community
 
-- **Website**: [goldenjacketsbrazil.com](https://goldenjacketsbrazil.com)
-- **LinkedIn**: [Golden Jackets Brazil](https://www.linkedin.com/company/golden-jackets-brazil)
-- **YouTube**: [@GoldenJacketsBrazil](https://www.youtube.com/@GoldenJacketsBrazil)
+- **Website**: [goldenjackets.pl](https://goldenjackets.pl)
+- **LinkedIn**: [Golden Jackets Poland](https://www.linkedin.com/company/golden-jackets-poland)
+- **YouTube**: [@GoldenJacketsPoland](https://www.youtube.com/@GoldenJacketsPoland)
 - **Spotify**: [Golden Jackets Podcast](https://open.spotify.com/episode/4JcjaBZb6uuLQnAyGw0PJF)
 - **Discord**: [Join server](https://discord.gg/qntq7b7UqF)
 
@@ -182,7 +182,7 @@ Members can submit articles and content through the Members Lounge. For technica
 
 ## License
 
-This project is maintained by the Golden Jackets Brazil community.
+This project is maintained by the Golden Jackets Poland community.
 
 ---
 
