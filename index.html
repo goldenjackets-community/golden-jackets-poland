@@ -459,23 +459,39 @@
     <h2>Where we are</h2>
     <p class="tip">Golden Jackets across Poland</p>
     <div class="map-container">
-      <svg viewBox="0 0 600 500" style="width:100%;max-width:500px;height:auto;" id="poland-map">
-        <path data-state="ZP" d="M80,120 L130,100 L160,120 L150,170 L100,180 L70,160 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="PM" d="M130,50 L200,40 L220,80 L200,120 L130,100 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="WN" d="M200,40 L300,30 L320,80 L280,100 L220,80 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="PD" d="M320,80 L400,60 L420,120 L380,140 L320,120 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="KP" d="M200,120 L280,100 L290,160 L220,170 L180,150 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="MZ" d="M280,100 L380,140 L370,220 L300,210 L290,160 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="LU" d="M380,140 L460,160 L450,250 L370,220 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="WP" d="M100,180 L180,150 L220,170 L210,240 L130,250 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="LB" d="M70,160 L100,180 L130,250 L80,270 L50,230 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="LD" d="M220,170 L290,160 L300,210 L280,260 L210,240 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="DS" d="M80,270 L130,250 L180,300 L140,340 L70,320 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="OP" d="M180,300 L210,240 L260,270 L240,330 L180,330 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="SK" d="M300,210 L370,220 L380,300 L310,310 L280,260 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="SL" d="M180,330 L240,330 L260,380 L220,400 L170,380 Z" fill="var(--map-active)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="MP" d="M260,380 L310,310 L380,300 L400,370 L320,400 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
-        <path data-state="PK" d="M380,300 L450,250 L480,320 L430,380 L400,370 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.5"/>
+      <svg viewBox="0 0 550 520" style="width:100%;max-width:480px;height:auto;" id="poland-map" xmlns="http://www.w3.org/2000/svg">
+        <!-- Zachodniopomorskie -->
+        <path data-state="ZP" d="M60,80 L95,55 L140,60 L155,95 L140,140 L95,150 L60,130 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Pomorskie -->
+        <path data-state="PM" d="M155,45 L220,35 L270,50 L260,100 L200,110 L155,95 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Warmińsko-Mazurskie -->
+        <path data-state="WN" d="M270,50 L350,40 L400,65 L390,130 L320,125 L260,100 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Podlaskie -->
+        <path data-state="PD" d="M400,65 L460,80 L470,160 L440,210 L390,190 L390,130 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Lubuskie -->
+        <path data-state="LB" d="M40,150 L95,150 L100,210 L80,260 L35,240 L30,190 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Wielkopolskie -->
+        <path data-state="WP" d="M95,150 L200,110 L230,150 L220,220 L160,250 L100,210 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Kujawsko-Pomorskie -->
+        <path data-state="KP" d="M200,110 L260,100 L320,125 L300,170 L230,150 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Mazowieckie -->
+        <path data-state="MZ" d="M300,170 L320,125 L390,130 L390,190 L380,250 L310,250 L280,220 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Łódzkie -->
+        <path data-state="LD" d="M230,150 L300,170 L280,220 L260,270 L200,270 L190,230 L220,220 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Lubelskie -->
+        <path data-state="LU" d="M380,250 L390,190 L440,210 L470,260 L450,340 L380,330 L350,280 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Dolnośląskie -->
+        <path data-state="DS" d="M60,270 L80,260 L160,250 L170,310 L130,350 L70,340 L50,300 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Opolskie -->
+        <path data-state="OP" d="M160,250 L200,270 L210,320 L170,350 L130,350 L170,310 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Świętokrzyskie -->
+        <path data-state="SK" d="M260,270 L310,250 L350,280 L330,330 L280,330 L260,300 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Śląskie (Dawid's region - highlighted) -->
+        <path data-state="SL" d="M170,350 L210,320 L250,340 L240,390 L200,410 L160,390 Z" fill="var(--map-active)" stroke="var(--map-stroke)" stroke-width="1.5"/>
+        <!-- Małopolskie -->
+        <path data-state="MP" d="M250,340 L280,330 L330,330 L350,380 L300,420 L240,390 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
+        <!-- Podkarpackie -->
+        <path data-state="PK" d="M350,280 L380,330 L450,340 L440,400 L370,420 L350,380 L330,330 Z" fill="var(--map-fill)" stroke="var(--map-stroke)" stroke-width="1.2"/>
       </svg>
     
       <div class="map-pin" style="top:72%;left:38%" onclick="filterByState('SL')"><span class="pin-icon">📍</span><span class="pin-count gold-count">1</span></div></div>
