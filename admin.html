@@ -54,6 +54,11 @@
         <div class="label">List Users</div>
         <div class="desc">View all Cognito users and status</div>
       </div>
+      <div class="tool-btn" id="btnAllChapters" style="display:none;" onclick="listAllUsers()">
+        <div class="icon">🌍</div>
+        <div class="label">All Chapters</div>
+        <div class="desc">View users from all chapters (Global Admin)</div>
+      </div>
       <div class="tool-btn" onclick="toggleCreateForm()">
         <div class="icon">➕</div>
         <div class="label">Create User</div>
@@ -416,6 +421,29 @@ function filterPartnerStats(){
   }
   html += '</table>';
   document.getElementById('partnerStats').innerHTML = html;
+}
+// Global admin: show All Chapters button
+var GLOBAL_ADMINS = ['ricardo.gulias@darede.com.br'];
+if (GLOBAL_ADMINS.includes(email)) { var btn = document.getElementById('btnAllChapters'); if(btn) btn.style.display=''; }
+
+async function listAllUsers() {
+  var body = {action:'list-users'};
+  var out = document.getElementById('adminOutput');
+  out.style.display = 'block';
+  out.innerHTML = '<span style="color:#FFD700;">Loading all chapters...</span>';
+  try {
+    var resp = await fetch(GJ_CONFIG.ADMIN_API, {method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+sessionStorage.getItem('gj_token')}, body: JSON.stringify(body)});
+    var data = await resp.json();
+    if (!data || !data.users) return;
+    var confirmed = data.users.filter(function(u){return u.status==='CONFIRMED';});
+    var pending = data.users.filter(function(u){return u.status!=='CONFIRMED';});
+    var html = '<strong style="color:#FFD700;">🌍 ALL CHAPTERS — Total: ' + data.users.length + ' users (' + confirmed.length + ' confirmed, ' + pending.length + ' pending)</strong><br><br>';
+    html += '<strong style="color:#4CAF50;">✅ Confirmed (' + confirmed.length + '):</strong><br>';
+    confirmed.forEach(function(u){ html += u.email + '<br>'; });
+    html += '<br><strong style="color:#FF9800;">⏳ Pending (' + pending.length + '):</strong><br>';
+    pending.forEach(function(u){ html += u.email + ' — ' + u.status + '<br>'; });
+    out.innerHTML = html;
+  } catch(e) { out.innerHTML = '<span style="color:#f44336;">Error: '+e.message+'</span>'; }
 }
 </script>
 </body>
