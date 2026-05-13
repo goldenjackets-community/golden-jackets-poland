@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Jackets Brazil - Admin Console</title>
+  <title>Golden Jackets Poland - Admin Console</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a1a; color: #e0e0e0; }
@@ -37,7 +37,7 @@
 </head>
 <body>
   <nav>
-    <div class="logo">GJ <span>Brazil</span> · Admin</div>
+    <div class="logo">GJ <span>Poland</span> · Admin</div>
     <div class="nav-links">
       <a href="/members.html">← Back to Lounge</a>
       <a href="/">Main Site</a>
@@ -79,12 +79,12 @@
         <div class="label">Restore</div>
         <div class="desc">Restore site from latest backup</div>
       </div>
-      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-brazil/pulls" target="_blank">
+      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-poland/pulls" target="_blank">
         <div class="icon">🔀</div>
         <div class="label">Open PRs</div>
         <div class="desc">Review pending pull requests</div>
       </a>
-      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-brazil/actions" target="_blank">
+      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-poland/actions" target="_blank">
         <div class="icon">🚀</div>
         <div class="label">Deployments</div>
         <div class="desc">GitHub Actions status</div>
@@ -114,7 +114,7 @@
         <div class="label">Backlog</div>
         <div class="desc">View project backlog</div>
       </div>
-      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-brazil/blob/main/README.md" target="_blank">
+      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-poland/blob/main/README.md" target="_blank">
         <div class="icon">📖</div>
         <div class="label">README</div>
         <div class="desc">Project documentation</div>
@@ -154,7 +154,7 @@
     <div class="output" id="adminOutput"></div>
   </div>
 
-  <footer>Golden Jackets Brazil © 2026 · Admin Console</footer>
+  <footer>Golden Jackets Poland © 2026 · Admin Console</footer>
 
 <script src="/config.js"></script>
 <script>
@@ -277,7 +277,7 @@ async function showBacklog() {
   out.style.display = 'block';
   out.innerHTML = '<span style="color:#FFD700;">Loading backlog...</span>';
   try {
-    var resp = await fetch('https://raw.githubusercontent.com/ricardogulias/golden-jackets-brazil/main/BACKLOG.md?t='+Date.now());
+    var resp = await fetch('https://raw.githubusercontent.com/ricardogulias/golden-jackets-poland/main/BACKLOG.md?t='+Date.now());
     var md = await resp.text();
     var lines = md.split('\n');
     var html = '';
