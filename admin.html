@@ -74,7 +74,7 @@
         <div class="label">Delete User</div>
         <div class="desc">Remove user from Cognito</div>
       </div>
-      <div class="tool-btn green" onclick="backupStatus()">
+      <div class="tool-btn green" onclick="backupStatus()" style="display:none;">
         <div class="icon">💾</div>
         <div class="label">Backup Status</div>
         <div class="desc">View backup job history</div>
@@ -84,12 +84,12 @@
         <div class="label">Restore</div>
         <div class="desc">Restore site from latest backup</div>
       </div>
-      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-poland/pulls" target="_blank">
+      <a class="tool-btn" href="https://github.com/goldenjackets-community/golden-jackets-poland/pulls" target="_blank">
         <div class="icon">🔀</div>
         <div class="label">Open PRs</div>
         <div class="desc">Review pending pull requests</div>
       </a>
-      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-poland/actions" target="_blank">
+      <a class="tool-btn" href="https://github.com/goldenjackets-community/golden-jackets-poland/actions" target="_blank">
         <div class="icon">🚀</div>
         <div class="label">Deployments</div>
         <div class="desc">GitHub Actions status</div>
@@ -119,7 +119,7 @@
         <div class="label">Backlog</div>
         <div class="desc">View project backlog</div>
       </div>
-      <a class="tool-btn" href="https://github.com/ricardogulias/golden-jackets-poland/blob/main/README.md" target="_blank">
+      <a class="tool-btn" href="https://github.com/goldenjackets-community/golden-jackets-poland/blob/master/GUIDE.md" target="_blank">
         <div class="icon">📖</div>
         <div class="label">README</div>
         <div class="desc">Project documentation</div>
@@ -282,7 +282,7 @@ async function showBacklog() {
   out.style.display = 'block';
   out.innerHTML = '<span style="color:#FFD700;">Loading backlog...</span>';
   try {
-    var resp = await fetch('https://raw.githubusercontent.com/ricardogulias/golden-jackets-poland/main/BACKLOG.md?t='+Date.now());
+    var resp = await fetch('https://raw.githubusercontent.com/goldenjackets-community/golden-jackets-poland/master/BACKLOG.md?t='+Date.now());
     var md = await resp.text();
     var lines = md.split('\n');
     var html = '';
