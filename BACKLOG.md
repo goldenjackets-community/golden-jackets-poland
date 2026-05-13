@@ -13,6 +13,9 @@
 - [x] Welcome ticker showing "Welcome Dawid Drabek!"
 - [x] Branding updated (Poland, not Brazil)
 - [x] GUIDE.md for chapter leader
+- [x] Backup vault created (gj-poland-backups, daily, 7-day retention)
+- [x] Dawid has Admin panel access
+- [x] No AWS console needed for admin operations
 
 ## 🔄 In Progress
 
@@ -22,7 +25,6 @@
 ## 📋 To Do
 
 - [ ] Add more Polish Golden Jacket members
-- [ ] Create backup vault for Poland site
 - [ ] Social media presence (LinkedIn page?)
 - [ ] Partner logos (if applicable)
 - [ ] Events section
