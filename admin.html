@@ -79,7 +79,7 @@
         <div class="label">Backup Status</div>
         <div class="desc">View backup job history</div>
       </div>
-      <div class="tool-btn orange" onclick="restoreBackup()">
+      <div class="tool-btn orange" onclick="restoreBackup()" style="display:none;">
         <div class="icon">♻️</div>
         <div class="label">Restore</div>
         <div class="desc">Restore site from latest backup</div>
@@ -176,7 +176,7 @@ var lastAction = '';
 async function adminCall(action, extra) {
   var out = document.getElementById('adminOutput');
   var form = document.getElementById('createUserForm');
-  if (form) form.style.display = 'none';
+  if (form && action !== 'create-user') form.style.display = 'none';
   if (lastAction === action && out.style.display === 'block' && !extra) {
     out.style.display = 'none';
     lastAction = '';
