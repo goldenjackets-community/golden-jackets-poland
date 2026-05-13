@@ -163,7 +163,7 @@ var ADMIN_API = GJ_CONFIG.ADMIN_API;
 // Check auth
 var token = sessionStorage.getItem('gj_token');
 var email = sessionStorage.getItem('gj_email');
-if (!token || email !== GJ_CONFIG.ADMIN_EMAIL) {
+if (!token || !GJ_CONFIG.ADMIN_EMAILS.includes(email)) {
   document.body.innerHTML = '<div style="text-align:center;padding:100px;"><h2 style="color:#f44336;">Access Denied</h2><p style="color:#888;margin-top:12px;">Admin access restricted.</p><a href="/members.html" style="color:#FFD700;">← Back to Lounge</a></div>';
 }
 

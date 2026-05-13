@@ -288,7 +288,7 @@ function showContent(userEmail) {
   document.getElementById('loginBox').style.display = 'none';
   document.getElementById('content').style.display = 'block';
   document.getElementById('userEmail').textContent = userEmail;
-  if (userEmail === GJ_CONFIG.ADMIN_EMAIL) {
+  if (GJ_CONFIG.ADMIN_EMAILS.includes(userEmail)) {
     document.getElementById('adminBtnWrap').style.display = 'inline';
     var adminPanel = document.getElementById('sec-admin');
     if (adminPanel) adminPanel.style.display = 'block';
@@ -542,13 +542,13 @@ async function confirmReset() {
 </body>
 </html>
 <script>
-var ADMIN_EMAIL = GJ_CONFIG.ADMIN_EMAIL;
+var ADMIN_EMAILS = GJ_CONFIG.ADMIN_EMAILS;
 var ADMIN_API = GJ_CONFIG.ADMIN_API;
 
 function toggleAdmin() {
   var panel = document.getElementById('sec-admin');
   var email = sessionStorage.getItem('gj_email');
-  if (email === ADMIN_EMAIL) {
+  if (ADMIN_EMAILS.includes(email)) {
     panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
   } else {
     alert('Admin access restricted.');
