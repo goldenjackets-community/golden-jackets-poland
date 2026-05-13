@@ -52,19 +52,14 @@ Add or edit translations there. The site switches language automatically based o
 
 ### Add a new member
 
-In `index.html`, find the `<!-- Members -->` section. Copy an existing member card block and update:
+1. Go to **goldenjackets.pl/admin.html** (you need admin access)
+2. Use the **Create User** tool to add their Lounge access
+3. To add their card on the site, edit `index.html` via GitHub and copy an existing member card block
 
-```html
-<div class="member-card" data-state="XX">
-    <img src="assets/members/name.jpg" alt="Name" ...>
-    <h3>Full Name</h3>
-    <p class="location">City, Poland</p>
-    ...
-</div>
-```
+### Remove a member
 
-- Add their photo to `assets/members/` (square, ~200x200px)
-- Update the stats in the ticker section (member count, states)
+1. Go to **goldenjackets.pl/admin.html**
+2. Use the **Delete User** tool to remove their Lounge access
 
 ### Change site text/content
 
