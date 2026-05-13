@@ -183,12 +183,12 @@ async function adminCall(action, extra) {
   out.innerHTML = '<span style="color:#FFD700;">Loading...</span>';
   try {
     var body = Object.assign({action: action}, extra || {});
-    var resp = await fetch(ADMIN_API, {method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+sessionStorage.getItem('gj_token')}, body: JSON.stringify(body)});
+    var resp = await fetch(ADMIN_API, {method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+sessionStorage.getItem('gj_token')}, body: JSON.stringify(Object.assign(body, {chapter: 'poland'}))});
     // If unauthorized, try refresh token
     if (resp.status === 401 || resp.status === 403) {
       var refreshed = await refreshSession();
       if (refreshed) {
-        resp = await fetch(ADMIN_API, {method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+sessionStorage.getItem('gj_token')}, body: JSON.stringify(body)});
+        resp = await fetch(ADMIN_API, {method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+sessionStorage.getItem('gj_token')}, body: JSON.stringify(Object.assign(body, {chapter: 'poland'}))});
       } else {
         out.innerHTML = '<span style="color:#f44336;">Session expired. Please <a href="/members.html" style="color:#FFD700;">log in again</a>.</span>';
         return null;
