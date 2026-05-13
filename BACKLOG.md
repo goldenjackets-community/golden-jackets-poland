@@ -26,5 +26,3 @@
 
 - [ ] Add more Polish Golden Jacket members
 - [ ] Social media presence (LinkedIn page?)
-- [ ] Partner logos (if applicable)
-- [ ] Events section
