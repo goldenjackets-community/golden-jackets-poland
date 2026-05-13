@@ -3,26 +3,29 @@
 ## ✅ Done
 
 - [x] Site goldenjackets.pl live (S3 + CloudFront + SSL)
-- [x] DNS configured (Route 53 hosted zone + nameservers)
-- [x] GitHub repo transferred to org `goldenjackets-community`
-- [x] CI/CD pipeline (GitHub Actions → S3 → CloudFront invalidation → smoke test)
+- [x] DNS configured (Route 53 + nameservers)
+- [x] GitHub org (goldenjackets-community)
+- [x] CI/CD pipeline (GitHub Actions → S3 → CloudFront → smoke test)
 - [x] Members Lounge with Cognito auth
-- [x] Admin panel (create/delete users, list users)
-- [x] Admin scoped to Poland chapter only
-- [x] Dawid added as Chapter Lead (Cognito + GitHub collaborator)
-- [x] Welcome ticker showing "Welcome Dawid Drabek!"
-- [x] Branding updated (Poland, not Brazil)
-- [x] GUIDE.md for chapter leader
-- [x] Backup vault created (gj-poland-backups, daily, 7-day retention)
-- [x] Dawid has Admin panel access
-- [x] No AWS console needed for admin operations
+- [x] Admin panel (scoped to Poland)
+- [x] Dawid added as Chapter Lead + admin
+- [x] Welcome ticker working
+- [x] Branding updated (Poland)
+- [x] Polish translations complete
+- [x] Backup vault (gj-poland-backups, daily)
+- [x] Chapter Leader Operations Guide (PDF in admin)
+- [x] Apply form automated (creates PR with card)
+- [x] Jacket image fixed (same size as BR, dark background)
+- [x] Dawid has GitHub write access
+- [x] No AWS console needed for admin
 
 ## 🔄 In Progress
 
-- [ ] Polish translations (Dawid)
-- [ ] Content customization (Dawid)
+- [ ] Dawid reviewing Polish translations
+- [ ] LinkedIn Company Page (Dawid)
 
 ## 📋 To Do
 
 - [ ] Add more Polish Golden Jacket members
-- [ ] Social media presence (LinkedIn page?)
+- [ ] Social media presence
+- [ ] First community event/meetup
