@@ -1244,9 +1244,9 @@ function applyLang() {
   // Translate ticker
   document.querySelectorAll('.ticker-content span').forEach(function(s) {
     if (currentLang === 'pl') {
-      s.textContent = s.textContent.replace('Members', 'Członkowie').replace('Certifications', 'Certyfikaty').replace('States', 'Województwa').replace('Celebrating Polish AWS Excellence', 'Celebrując polską doskonałość AWS');
+      s.textContent = s.textContent.replace('Members', 'Członkowie').replace('Certifications', 'Certyfikaty').replace('States', 'Województwa').replace('Celebrating Polish AWS Excellence', '#PolskaGurom');
     } else {
-      s.textContent = s.textContent.replace('Członkowie', 'Members').replace('Certyfikaty', 'Certifications').replace('Województwa', 'States').replace('Celebrując polską doskonałość AWS', 'Celebrating Polish AWS Excellence');
+      s.textContent = s.textContent.replace('Członkowie', 'Members').replace('Certyfikaty', 'Certifications').replace('Województwa', 'States').replace('#PolskaGurom', 'Celebrating Polish AWS Excellence');
     }
   });
 
