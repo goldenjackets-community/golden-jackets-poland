@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in this project, please report it responsibly:
 
-- **Email**: ricardo.gulias@darede.com.br
+- **Email**: ricardo.gulias@goldenjacketsbrazil.com
 - **Do NOT** open a public GitHub issue for security vulnerabilities
 
 ## Security Measures
