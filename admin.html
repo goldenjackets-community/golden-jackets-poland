@@ -113,6 +113,11 @@
         <div class="label">Card Generator</div>
         <div class="desc">Generate member cards</div>
       </a>
+      <div class="tool-btn" onclick="showChangePhoto()">
+        <div class="icon">📷</div>
+        <div class="label">Change Photo</div>
+        <div class="desc">Update a member's photo</div>
+      </div>
       <div class="tool-btn" onclick="exportCSV()">
         <div class="icon">📥</div>
         <div class="label">Export CSV</div>
@@ -471,6 +476,39 @@ async function listAllUsers() {
     out.innerHTML = html;
   } catch(e) { out.innerHTML = '<span style="color:#f44336;">Error: '+e.message+'</span>'; }
 }
+function showChangePhoto() {
+  var out = document.getElementById('adminOutput');
+  out.style.display = 'block';
+  out.innerHTML = '<span style="color:#FFD700;">Loading members...</span>';
+  adminCall('list-members').then(function(data) {
+    if (!data || !data.members) { out.innerHTML = '<span style="color:#f44336;">Failed to load members</span>'; return; }
+    var opts = data.members.map(function(n){ return '<option value="' + n + '">' + n + '</option>'; }).join('');
+    out.innerHTML = '<strong style="color:#FFD700;">📷 Change Member Photo</strong><br><br>' +
+      '<select id="photoName" style="width:100%;padding:8px;margin-bottom:8px;background:#1a1a30;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;"><option value="">-- Select member --</option>' + opts + '</select><br>' +
+      '<input id="photoFile" type="file" accept="image/*" style="margin-bottom:12px;color:#e0e0e0;"><br>' +
+      '<button onclick="uploadPhoto()" style="padding:8px 20px;background:linear-gradient(135deg,#FFD700,#B8860B);border:none;border-radius:6px;color:#151528;font-weight:700;cursor:pointer;">Upload & Update</button>' +
+      '<p id="photoMsg" style="margin-top:8px;font-size:0.85em;"></p>';
+  });
+}
+async function uploadPhoto() {
+  var name = document.getElementById('photoName').value.trim();
+  var file = document.getElementById('photoFile').files[0];
+  var msg = document.getElementById('photoMsg');
+  if (!name || !file) { msg.innerHTML = '<span style="color:#f44336;">Please select a member and a photo.</span>'; return; }
+  if (file.size > 5000000) { msg.innerHTML = '<span style="color:#f44336;">Photo too large. Max 5MB.</span>'; return; }
+  msg.innerHTML = '<span style="color:#FFD700;">Uploading...</span>';
+  var reader = new FileReader();
+  reader.onload = async function() {
+    try {
+      var base64 = reader.result.split(',')[1];
+      var resp = await fetch(ADMIN_API, {method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+sessionStorage.getItem('gj_token')}, body: JSON.stringify({action:'update-photo', chapter: GJ_CONFIG.CHAPTER, name: name, photo: base64, filename: file.name})});
+      var data = await resp.json();
+      if (data.message) { msg.innerHTML = '<span style="color:#4CAF50;">✅ ' + data.message + '</span>'; }
+      else { msg.innerHTML = '<span style="color:#f44336;">❌ ' + (data.error || 'Unknown error') + '</span>'; }
+    } catch(e) { msg.innerHTML = '<span style="color:#f44336;">❌ Error: ' + e.message + '</span>'; }
+  };
+  reader.readAsDataURL(file);
+}
 </script>
 </body>
 </html>
@@ -481,10 +519,33 @@ async function listPRs(type) {
   var prs = data.prs.filter(function(p){ return p.type === type; });
   var out = document.getElementById('adminOutput');
   if (prs.length === 0) { out.innerHTML = '<span style="color:#4CAF50;">✅ No pending ' + (type==='member'?'applications':'articles') + '!</span>'; return; }
-      <div style="grid-column:1/-1;color:#FFD700;font-size:0.8em;font-weight:700;letter-spacing:1px;margin-top:10px;border-bottom:1px solid #2a2a45;padding-bottom:4px;">📝 CONTENT</div>
   var h = '<strong style="color:#FFD700;">' + (type==='member'?'📋 Pending Applications':'📝 Pending Articles') + ' (' + prs.length + ')</strong><br><br>';
-  prs.forEach(function(pr){ h += '<div style="background:#1a1a30;padding:12px;border-radius:8px;margin-bottom:8px;border:1px solid #2a2a45;"><strong style="color:#fff;">' + pr.title + '</strong><br><span style="color:#888;font-size:0.8em;">By ' + pr.author + ' · ' + pr.created_at.split('T')[0] + '</span><br><button onclick="mergePR(' + pr.number + ')" style="margin-top:8px;padding:6px 16px;background:#4CAF50;border:none;border-radius:4px;color:#fff;font-weight:700;cursor:pointer;">✅ Approve & ' + (type==='member'?'Add':'Publish') + '</button></div>'; });
+  prs.forEach(function(pr){
+    h += '<div style="background:#1a1a30;padding:16px;border-radius:8px;margin-bottom:12px;border:1px solid #2a2a45;">';
+    h += '<strong style="color:#fff;font-size:1.05em;">' + pr.title + '</strong><br>';
+    h += '<span style="color:#888;font-size:0.8em;">By ' + pr.author + ' · ' + pr.created_at.split('T')[0] + '</span>';
+    if (pr.body) {
+      var urlMatch = pr.body.match(/\*\*URL:\*\*\s*(https?:\/\/[^\s\n]+)/);
+      var summaryMatch = pr.body.match(/\*\*Summary:\*\*\s*([^\n]+)/);
+      if (urlMatch) { h += '<br><a href="' + urlMatch[1] + '" target="_blank" style="color:#2196F3;font-size:1.1em;text-decoration:none;font-weight:600;display:inline-block;margin-top:6px;">🔗 Read full article ↗</a>'; }
+      if (summaryMatch) { h += '<p style="color:#ccc;font-size:0.85em;margin:8px 0;padding:8px;background:#151528;border-radius:4px;border-left:3px solid #FFD700;">' + summaryMatch[1] + '</p>'; }
+    }
+    h += '<div style="margin-top:10px;">';
+    h += '<button onclick="mergePR(' + pr.number + ')" style="padding:6px 16px;background:#4CAF50;border:none;border-radius:4px;color:#fff;font-weight:700;cursor:pointer;margin-right:8px;">✅ Approve & ' + (type==='member'?'Add':'Publish') + '</button>';
+    h += '<button onclick="rejectPR(' + pr.number + ')" style="padding:6px 16px;background:#f44336;border:none;border-radius:4px;color:#fff;font-weight:700;cursor:pointer;">❌ Reject</button>';
+    h += '</div></div>';
+  });
   out.innerHTML = h;
 }
-async function mergePR(number) { if (!confirm('Approve PR #' + number + '?')) return; var data = await adminCall('merge-pr', {pr_number: number}); if (data && data.message) { document.getElementById('adminOutput').innerHTML = '<span style="color:#4CAF50;">✅ ' + data.message + '</span>'; } }
+async function mergePR(number) {
+  if (!confirm('Are you sure you want to approve PR #' + number + '?')) return;
+  var data = await adminCall('merge-pr', {pr_number: number});
+  if (data && data.message) { document.getElementById('adminOutput').innerHTML = '<span style="color:#4CAF50;">✅ ' + data.message + '</span><br><span style="color:#888;">Site will update in ~1 minute.</span>'; }
+}
+async function rejectPR(number) {
+  var reason = prompt('Reason for rejection (will be sent to the author):');
+  if (!reason) return;
+  var data = await adminCall('close-pr', {pr_number: number, reason: reason});
+  if (data && data.message) { document.getElementById('adminOutput').innerHTML = '<span style="color:#f44336;">❌ ' + data.message + '</span>'; }
+}
 </script>
