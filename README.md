@@ -189,3 +189,7 @@ This project is maintained by the Golden Jackets Poland community.
 *Independent community, not officially affiliated with Amazon Web Services.*
 
 *Last updated: 10/05/2026*
+
+## 🤖 Built With AI
+
+This project was entirely built using **Kiro CLI** (powered by Claude, Anthropic) — from HTML/CSS/JS to AWS infrastructure, Lambda functions, CI/CD pipelines, and admin panel.
