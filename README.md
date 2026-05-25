@@ -76,6 +76,15 @@ Community website celebrating Polish professionals who earned all active AWS cer
 | **Budgets** | Cost monitoring ($10/month alarm) |
 | **GitHub Actions** | CI/CD pipeline + auto-numbering cards |
 
+## Developer Tooling
+
+| Tool | Purpose |
+|------|---------||
+| **Kiro CLI** | AI-assisted development (code, deploy, operations) |
+| **MCP Server** | Custom tools for community management (list members, invalidate cache, chapter status) |
+| **Steering Files** | AI context rules (conventions, security, infrastructure) — `.kiro/steering/` |
+| **Knowledge Bases** | Indexed project history and architecture for cross-session context |
+
 ## Project Structure
 
 ```
@@ -97,6 +106,7 @@ Community website celebrating Polish professionals who earned all active AWS cer
 │       ├── deploy.yml      # S3 deploy + CloudFront invalidation + auto-numbering
 │       ├── deploy-staging.yml  # Staging deploy
 │       └── create-user.yml # User onboarding automation
+├── .kiro/steering/         # AI context rules (conventions, security, infrastructure)
 ├── BACKLOG.md              # Project backlog
 ├── SECURITY.md             # Security policy
 └── README.md
@@ -188,8 +198,8 @@ This project is maintained by the Golden Jackets Poland community.
 
 *Independent community, not officially affiliated with Amazon Web Services.*
 
-*Last updated: 10/05/2026*
+*Last updated: 25/05/2026*
 
 ## 🤖 Built With AI
 
-This project was entirely built using **Kiro CLI** (powered by Claude, Anthropic) — from HTML/CSS/JS to AWS infrastructure, Lambda functions, CI/CD pipelines, and admin panel.
+This project was entirely built using **Kiro CLI** (powered by Claude, Anthropic) — from HTML/CSS/JS to AWS infrastructure, Lambda functions, CI/CD pipelines, and admin panel. Development is accelerated with MCP Server (custom tools), Steering Files (AI context), and Knowledge Bases (persistent memory).
