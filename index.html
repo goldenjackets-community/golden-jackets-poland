@@ -1205,6 +1205,7 @@ var translations = {
   '⚔️ Challengers': '⚔️ Pretendenci',
   'Sponsors': 'Sponsorzy',
   'Lounge': 'Loża',
+  'Lounge 🔒': 'Loża 🔒',
   'Where we are': 'Gdzie jesteśmy',
   'Golden Jackets across Poland': 'Golden Jackets w Polsce',
   'Every Golden Jacket holds all active AWS Certifications': 'Każdy Golden Jacket posiada wszystkie aktywne certyfikaty AWS',
@@ -1407,9 +1408,15 @@ function applyLang() {
     });
     var joinSpan = document.querySelector('.join-btn span');
     if(joinSpan) joinSpan.textContent = 'Dołącz';
+    document.querySelectorAll('a').forEach(function(el){
+      if(el.textContent.trim()==='Lounge 🔒') el.textContent='Loża 🔒';
+    });
   } else {
     var joinSpan = document.querySelector('.join-btn span');
     if(joinSpan) joinSpan.textContent = 'Join Us';
+    document.querySelectorAll('a').forEach(function(el){
+      if(el.textContent.trim()==='Loża 🔒') el.textContent='Lounge 🔒';
+    });
   }
 }
 
