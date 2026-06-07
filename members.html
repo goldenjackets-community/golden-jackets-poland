@@ -89,7 +89,7 @@
 
   <!-- MFA Setup (during login) -->
   <div class="login-box" id="mfaSetupBox" style="display:none;">
-    <h2>🔐 Setup MFA</h2>
+    <h2>🔐 Konfiguruj MFA</h2>
     <p>Your account requires two-factor authentication. Scan the QR code below with Google Authenticator or any TOTP app, then enter the 6-digit code.</p>
     <div id="mfaSetupLoginOutput" style="margin-top:12px;"></div>
   </div>
@@ -120,7 +120,7 @@
         <span>
           <span id="adminBtnWrap" style="display:none;"><a href="/admin.html" style="background:linear-gradient(135deg,#FFD700,#B8860B);color:#151528;padding:4px 14px;border-radius:6px;font-weight:700;font-size:0.8em;text-decoration:none;margin-right:12px;">⚙️ Admin</a></span>
         <span id="userEmail"></span>
-          <a onclick="signOut()">Sign out</a>
+          <a onclick="signOut()">Wyloguj</a>
         </span>
       </div>
     </nav>
@@ -128,15 +128,15 @@
     <div class="container" style="display:flex;gap:24px;max-width:1000px;">
       <div style="flex:1;">
         <h1>🏆 Loża Członków</h1>
-        <p class="subtitle">Welcome, Golden Jacket! This area is exclusive to verified members.</p>
+        <p class="subtitle">Witaj, Golden Jacket! Ten obszar jest dostępny tylko dla zweryfikowanych członków.</p>
 
         <div class="card" id="sec-jobs">
-          <span class="badge">Jobs</span>
-          <h3>💼 Job Board</h3>
-          <p>Exclusive opportunities shared by Golden Jacket members.</p>
+          <span class="badge">Oferty pracy</span>
+          <h3>💼 Tablica ogłoszeń</h3>
+          <p>Ekskluzywne oferty udostępniane przez członków Golden Jacket.</p>
           <br>
           <div id="jobsList" style="max-height:200px;overflow-y:auto;margin-bottom:12px;font-size:0.85em;"></div>
-          <button onclick="toggleJobForm()" id="jobFormBtn" style="width:100%;padding:10px;background:linear-gradient(135deg,#FFD700,#B8860B);border:none;border-radius:6px;color:#151528;font-weight:700;cursor:pointer;">+ Post a Job</button>
+          <button onclick="toggleJobForm()" id="jobFormBtn" style="width:100%;padding:10px;background:linear-gradient(135deg,#FFD700,#B8860B);border:none;border-radius:6px;color:#151528;font-weight:700;cursor:pointer;">+ Dodaj ofertę</button>
           <div id="jobForm" style="display:none;margin-top:12px;">
             <input type="text" id="jobCompany" placeholder="Company" style="width:100%;padding:8px;margin-bottom:6px;background:#151528;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;">
             <input type="text" id="jobRole" placeholder="Role / Position" style="width:100%;padding:8px;margin-bottom:6px;background:#151528;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;">
@@ -148,58 +148,58 @@
           </div>
         </div>
         <div class="card" id="sec-article">
-          <span class="badge">Content</span>
-          <h3>📝 Submit Article</h3>
-          <p>Share your technical content with the community. Articles will be reviewed and published on our website.</p>
+          <span class="badge">Treść</span>
+          <h3>📝 Wyślij artykuł</h3>
+          <p>Podziel się treścią techniczną ze społecznością. Artykuły zostaną sprawdzone i opublikowane na naszej stronie.</p>
           <br>
           <div id="articleForm">
-            <input type="text" id="artTitle" placeholder="Article title" style="width:100%;padding:10px;margin-bottom:8px;background:#151528;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;font-family:inherit;">
-            <input type="url" id="artUrl" placeholder="Article URL (community.aws, dev.to, etc)" style="width:100%;padding:10px;margin-bottom:8px;background:#151528;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;font-family:inherit;">
-            <input type="text" id="artSummary" placeholder="Short summary (1-2 sentences)" style="width:100%;padding:10px;margin-bottom:8px;background:#151528;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;font-family:inherit;">
-            <button onclick="submitArticle()" style="width:100%;padding:10px;background:linear-gradient(135deg,#FFD700,#B8860B);border:none;border-radius:6px;color:#151528;font-weight:700;cursor:pointer;">Submit for Review</button>
+            <input type="text" id="artTitle" placeholder="Tytuł artykułu" style="width:100%;padding:10px;margin-bottom:8px;background:#151528;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;font-family:inherit;">
+            <input type="url" id="artUrl" placeholder="URL artykułu (community.aws, dev.to, itp.)" style="width:100%;padding:10px;margin-bottom:8px;background:#151528;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;font-family:inherit;">
+            <input type="text" id="artSummary" placeholder="Krótkie podsumowanie (1-2 zdania)" style="width:100%;padding:10px;margin-bottom:8px;background:#151528;border:1px solid #2a2a45;border-radius:6px;color:#e0e0e0;font-family:inherit;">
+            <button onclick="submitArticle()" style="width:100%;padding:10px;background:linear-gradient(135deg,#FFD700,#B8860B);border:none;border-radius:6px;color:#151528;font-weight:700;cursor:pointer;">Wyślij do recenzji</button>
             <p id="artMsg" style="margin-top:8px;font-size:0.85em;"></p>
           </div>
         </div>
 
         <div class="card" id="sec-discord">
-          <span class="badge">Community</span>
-          <h3>💬 Discord Server</h3>
-          <p>Join our private Discord server to connect with other Golden Jackets, share experiences, and collaborate on initiatives.</p>
+          <span class="badge">Społeczność</span>
+          <h3>💬 Serwer Discord</h3>
+          <p>Dołącz do naszego prywatnego serwera Discord, aby nawiązać kontakt z innymi Golden Jackets, dzielić się doświadczeniami i współpracować.</p>
           <br>
-          <a href="https://discord.gg/qntq7b7UqF" target="_blank">Join Discord →</a>
+          <a href="https://discord.gg/qntq7b7UqF" target="_blank">Dołącz do Discord →</a>
         </div>
 
         <div class="card" id="sec-resources">
-          <span class="badge">Resources</span>
-          <h3>📚 Certification Resources</h3>
-          <p>Curated study materials, exam tips, and strategies shared by our members to help the community grow.</p>
+          <span class="badge">Zasoby</span>
+          <h3>📚 Materiały certyfikacyjne</h3>
+          <p>Wyselekcjonowane materiały, wskazówki i strategie udostępniane przez naszych członków.</p>
           <br>
-          <a href="#">Coming soon →</a>
+          <a href="#">Wkrótce →</a>
         </div>
 
         <div class="card" id="sec-events">
-          <span class="badge">Events</span>
-          <h3>📅 Internal Events</h3>
-          <p>Exclusive meetups, study groups, and community calls for Golden Jacket members only.</p>
+          <span class="badge">Wydarzenia</span>
+          <h3>📅 Wydarzenia wewnętrzne</h3>
+          <p>Ekskluzywne meetupy, grupy studyjne i spotkania tylko dla członków Golden Jacket.</p>
           <br>
-          <a href="#">Coming soon →</a>
+          <a href="#">Wkrótce →</a>
         </div>
 
 
         <div class="card" id="sec-brand">
-          <span class="badge">Brand</span>
-          <h3>🎨 Brand Assets</h3>
-          <p>Download official Golden Jackets Poland logos, badges, and social media templates.</p>
+          <span class="badge">Marka</span>
+          <h3>🎨 Materiały graficzne</h3>
+          <p>Pobierz oficjalne logo, odznaki i szablony Golden Jackets Poland.</p>
           <br>
-          <a href="#">Coming soon →</a>
+          <a href="#">Wkrótce →</a>
         </div>
 
         <div class="card" id="mfaSetupCard" style="display:none;">
-          <span class="badge">Security</span>
-          <h3>🔐 MFA Setup</h3>
-          <p>Enable two-factor authentication for your admin account.</p>
+          <span class="badge">Bezpieczeństwo</span>
+          <h3>🔐 Konfiguracja MFA</h3>
+          <p>Włącz uwierzytelnianie dwuskładnikowe dla konta administratora.</p>
           <br>
-          <button onclick="setupMfa()" style="padding:8px 16px;background:linear-gradient(135deg,#FFD700,#B8860B);border:none;border-radius:8px;color:#151528;font-weight:700;cursor:pointer;">Setup MFA</button>
+          <button onclick="setupMfa()" style="padding:8px 16px;background:linear-gradient(135deg,#FFD700,#B8860B);border:none;border-radius:8px;color:#151528;font-weight:700;cursor:pointer;">Konfiguruj MFA</button>
           <div id="mfaSetupOutput" style="margin-top:12px;"></div>
         </div>
 
@@ -210,7 +210,7 @@
 
   <footer>
     <p>Golden Jackets Poland © 2026 · Loża Członków</p>
-    <p><a href="/">Back to main site</a></p>
+    <p><a href="/">Powrót do strony głównej</a></p>
   </footer>
 
 <script>
@@ -760,7 +760,7 @@ function toggleJobForm() {
   var form = document.getElementById('jobForm');
   var btn = document.getElementById('jobFormBtn');
   if (form.style.display === 'none') { form.style.display = 'block'; btn.textContent = '✕ Cancel'; }
-  else { form.style.display = 'none'; btn.textContent = '+ Post a Job'; }
+  else { form.style.display = 'none'; btn.textContent = '+ Dodaj ofertę'; }
 }
 async function loadJobs() {
   try {
@@ -788,7 +788,7 @@ async function postJob() {
     var data = await resp.json();
     msg.innerHTML = '<span style="color:#3ecf8e">✅ Job posted!</span>';
     document.getElementById('jobForm').style.display = 'none';
-    document.getElementById('jobFormBtn').textContent = '+ Post a Job';
+    document.getElementById('jobFormBtn').textContent = '+ Dodaj ofertę';
     document.getElementById('jobCompany').value = '';
     document.getElementById('jobRole').value = '';
     document.getElementById('jobLocation').value = '';
