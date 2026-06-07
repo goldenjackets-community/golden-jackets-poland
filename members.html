@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Jackets Poland - Members Lounge</title>
+  <title>Golden Jackets Poland - Loża Członków</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,26 +41,26 @@
 <body>
   <nav>
     <div class="logo">GJ <span>Poland</span> · Lounge</div>
-    <a href="/">← Back to site</a>
+    <a href="/">← Powrót do strony</a>
   </nav>
   <script src="/config.js"></script>
 
 
   <!-- Login -->
   <div class="login-box" id="loginBox">
-    <h2>🔒 Members Lounge</h2>
-    <p>Sign in with your Golden Jackets account</p>
+    <h2>🔒 Loża Członków</h2>
+    <p>Zaloguj się kontem Golden Jackets</p>
     <input type="email" id="loginEmail" placeholder="Email">
     <input type="password" id="loginPass" placeholder="Password" onkeydown="if(event.key==='Enter')signIn()">
-    <button onclick="signIn()">Sign In</button>
+    <button onclick="signIn()">Zaloguj się</button>
     <p class="login-msg" id="loginMsg"></p>
     <p style="margin-top:16px;font-size:0.85em;">
-      <a onclick="showForgot()" style="color:#FFD700;cursor:pointer;">Forgot password?</a>
+      <a onclick="showForgot()" style="color:#FFD700;cursor:pointer;">Nie pamiętasz hasła?</a>
       <span style="color:#444;margin:0 8px;">|</span>
-      <a onclick="showFirstLogin()" style="color:#C0C0C0;cursor:pointer;">Change Password (1st Login)</a>
+      <a onclick="showFirstLogin()" style="color:#C0C0C0;cursor:pointer;">Zmień hasło (pierwsze logowanie)</a>
     </p>
     <p style="margin-top:8px;font-size:0.8em;color:#666;">
-      Not a member yet? <a href="/#join" style="color:#FFD700;">Request access</a>
+      Nie jesteś jeszcze członkiem? <a href="/#join" style="color:#FFD700;">Poproś o dostęp</a>
     </p>
   </div>
 
@@ -71,7 +71,7 @@
     <input type="email" id="firstEmail" placeholder="Email">
     <input type="password" id="firstTempPass" placeholder="Temporary password">
     <input type="password" id="firstNewPass" placeholder="New password" onkeydown="if(event.key==='Enter')firstLogin()">
-    <button onclick="firstLogin()">Change Password & Sign In</button>
+    <button onclick="firstLogin()">Zmień hasło i zaloguj się</button>
     <p class="login-msg" id="firstMsg"></p>
     <p style="margin-top:16px;font-size:0.85em;">
       <a onclick="showLogin()" style="color:#FFD700;cursor:pointer;">← Back to login</a>
@@ -127,7 +127,7 @@
 
     <div class="container" style="display:flex;gap:24px;max-width:1000px;">
       <div style="flex:1;">
-        <h1>🏆 Members Lounge</h1>
+        <h1>🏆 Loża Członków</h1>
         <p class="subtitle">Welcome, Golden Jacket! This area is exclusive to verified members.</p>
 
         <div class="card" id="sec-jobs">
@@ -209,7 +209,7 @@
   </div>
 
   <footer>
-    <p>Golden Jackets Poland © 2026 · Members Lounge</p>
+    <p>Golden Jackets Poland © 2026 · Loża Członków</p>
     <p><a href="/">Back to main site</a></p>
   </footer>
 
