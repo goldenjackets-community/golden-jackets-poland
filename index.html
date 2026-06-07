@@ -1249,6 +1249,37 @@ var translations = {
   'visits': 'odwiedzin',
   'unique visitors': 'unikalnych odwiedzających',
   'Independent community, not officially affiliated with Amazon Web Services.': 'GJ Poland to niezależna społeczność - nie jest oficjalnie powiązana z Amazon Web Services.'
+  'Application Submitted!': 'Zgłoszenie wysłane!',
+  'Submit Application': 'Wyślij zgłoszenie',
+  'Submitting...': 'Wysyłanie...',
+  'Error sending. Try again.': 'Błąd wysyłania. Spróbuj ponownie.',
+  'Please fill in name and email': 'Proszę podać imię i email',
+  'Category / Specialty': 'Kategoria / Specjalizacja',
+  'Certification Date': 'Data certyfikacji',
+  'Membership Type': 'Typ członkostwa',
+  'Select category...': 'Wybierz kategorię...',
+  'Select voivodeship...': 'Wybierz województwo...',
+  'Privacy Policy': 'Polityka prywatności',
+  'Your name': 'Twoje imię',
+  'Company': 'Firma',
+  'Email': 'E-mail',
+  'City': 'Miasto',
+  'Photo': 'Zdjęcie',
+  'LinkedIn URL': 'Profil LinkedIn',
+  'Date to be announced': 'Data zostanie ogłoszona',
+  'Golden Jacket Member': 'Członek Golden Jacket',
+  'Chapter Lead': 'Lider oddziału',
+  'AWS Community Program (optional)': 'Program społeczności AWS (opcjonalnie)',
+  'We received your interest and our team will reach out to': 'Otrzymaliśmy Twoje zgłoszenie, nasz zespół skontaktuje się z',
+  'Total:': 'Razem:',
+  'All': 'Wszystkie',
+  'Follow us →': 'Śledź nas →',
+  'GJ Poland Event': 'Wydarzenie GJ Poland',
+  'AWS Summit Warsaw': 'AWS Summit Warszawa',
+  'Which certifications?': 'Które certyfikaty?',
+  'What is Golden Jacket?': 'Czym jest Golden Jacket?',
+  'Path to the Golden Jacket': 'Droga do Golden Jacket',
+  'Everything you need to know about earning the highest AWS recognition': 'Wszystko, co musisz wiedzieć o zdobyciu najwyższego wyróżnienia AWS'
 };
 
 function toggleLang() {
@@ -1311,6 +1342,25 @@ function applyLang() {
       }
       if (text.startsWith('Certyfikat od')) { node.textContent = node.textContent.replace('Certyfikat od', 'Certified on'); }
     }
+  }
+  // Translate placeholders and buttons
+  if (currentLang === 'pl') {
+    document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(function(el){
+      if(translations[el.placeholder]) el.placeholder = translations[el.placeholder];
+    });
+    document.querySelectorAll('button, [type=submit]').forEach(function(el){
+      var t = el.textContent.trim();
+      if(translations[t]) el.textContent = translations[t];
+    });
+    document.querySelectorAll('label').forEach(function(el){
+      var t = el.textContent.trim();
+      if(translations[t]) el.textContent = translations[t];
+    });
+    var joinSpan = document.querySelector('.join-btn span');
+    if(joinSpan) joinSpan.textContent = 'Dołącz';
+  } else {
+    var joinSpan = document.querySelector('.join-btn span');
+    if(joinSpan) joinSpan.textContent = 'Join Us';
   }
 }
 
