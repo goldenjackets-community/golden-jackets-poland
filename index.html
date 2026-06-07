@@ -1239,6 +1239,14 @@ var translations = {
   'Where you\'ll find Golden Jackets Poland 🇵🇱': 'Gdzie znajdziesz Golden Jackets Poland 🇵🇱',
   'Path to the Golden Jacket': 'Droga do Golden Jacket',
   'Everything you need to know about earning the highest AWS recognition': 'Wszystko, co musisz wiedzieć o zdobyciu najwyższego wyróżnienia AWS',
+  'Interested in...': 'Zainteresowany...',
+  'Additional message (optional)': 'Dodatkowa wiadomość (opcjonalnie)',
+  'Full Name': 'Imię i nazwisko',
+  'LinkedIn Profile URL': 'Profil LinkedIn',
+  'Email (for Members Lounge access)': 'Email (dostęp do Members Lounge)',
+  'None': 'Brak',
+  'Send Interest →': 'Wyślij zainteresowanie →',
+  'All 12 certifications active': 'Wszystkie 12 certyfikatów aktywnych',,
   'Articles & Talks': 'Artykuły',
   'Technical content and talks from our Golden Jacket members': 'Treści techniczne i prezentacje naszych członków Golden Jacket',
   'Podcast & Videos': 'Podcast i Filmy',
@@ -1315,7 +1323,15 @@ var translations = {
   'Which certifications?': 'Które certyfikaty?',
   'What is Golden Jacket?': 'Czym jest Golden Jacket?',
   'Path to the Golden Jacket': 'Droga do Golden Jacket',
-  'Everything you need to know about earning the highest AWS recognition': 'Wszystko, co musisz wiedzieć o zdobyciu najwyższego wyróżnienia AWS'
+  'Everything you need to know about earning the highest AWS recognition': 'Wszystko, co musisz wiedzieć o zdobyciu najwyższego wyróżnienia AWS',
+  'Interested in...': 'Zainteresowany...',
+  'Additional message (optional)': 'Dodatkowa wiadomość (opcjonalnie)',
+  'Full Name': 'Imię i nazwisko',
+  'LinkedIn Profile URL': 'Profil LinkedIn',
+  'Email (for Members Lounge access)': 'Email (dostęp do Members Lounge)',
+  'None': 'Brak',
+  'Send Interest →': 'Wyślij zainteresowanie →',
+  'All 12 certifications active': 'Wszystkie 12 certyfikatów aktywnych',
 };
 
 function toggleLang() {
@@ -1389,6 +1405,10 @@ function applyLang() {
       if(translations[t]) el.textContent = translations[t];
     });
     document.querySelectorAll('label').forEach(function(el){
+      var t = el.textContent.trim();
+      if(translations[t]) el.textContent = translations[t];
+    });
+    document.querySelectorAll('select option').forEach(function(el){
       var t = el.textContent.trim();
       if(translations[t]) el.textContent = translations[t];
     });
