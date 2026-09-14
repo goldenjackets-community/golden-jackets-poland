@@ -1012,7 +1012,7 @@
       if(!tier){s.innerHTML='<span style="color:#f44336">Please select an option. If you want to apply as a Golden Jacket, Alumni, or Challenger, use the <a href="#" onclick="document.getElementById(\'applyForm\').classList.add(\'open\');return false;" style="color:#FFD700;text-decoration:underline;">application form below</a>.</span>';return;}
       if(!name||!email){s.innerHTML='<span style="color:#f44336">Please fill in name and email</span>';return;}
       s.innerHTML='<span style="color:var(--gold)">Sending...</span>';
-      fetch('https://POLAND-API-PLACEHOLDER.execute-api.eu-central-1.amazonaws.com/sponsor',{method:'POST',headers:{'Content-Type':'application/json'},
+      fetch('https://kqiq2bltjd.execute-api.us-east-1.amazonaws.com/sponsor',{method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({name:name,company:company,email:email})
       }).then(function(){
         var n=document.getElementById('sponsorName').value;var e=document.getElementById('sponsorEmail').value;document.getElementById('sponsorForm').innerHTML='<p style="color:#4CAF50;font-size:1.1em;margin-bottom:8px;">✅ Thank you, '+n+'!</p><p style="color:var(--text-muted);font-size:0.9em;">We received your interest and our team will reach out to <strong>'+e+'</strong> within 48 hours with our sponsorship options.</p><p style="color:var(--gold);font-size:0.85em;margin-top:12px;">Golden Jackets Poland 🏆</p>';
@@ -1147,7 +1147,7 @@ async function submitApplication() {
         reader.readAsDataURL(file);
       });
     }
-    var resp = await fetch('https://POLAND-API-PLACEHOLDER.execute-api.eu-central-1.amazonaws.com/apply', {
+    var resp = await fetch('https://kqiq2bltjd.execute-api.us-east-1.amazonaws.com/apply', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -1556,7 +1556,7 @@ setInterval(updateCountdowns, 1000);
           var isNew = !localStorage.getItem(key);
           localStorage.setItem(key, (parseInt(localStorage.getItem(key)||'0')+1).toString());
           var data = new Blob([JSON.stringify({partner:partners[domain],visitorId:vid,isUnique:isNew})],{type:'application/json'});
-          navigator.sendBeacon('https://POLAND-API-PLACEHOLDER.execute-api.eu-central-1.amazonaws.com/click', data);
+          navigator.sendBeacon('https://97i05orlfa.execute-api.us-east-1.amazonaws.com/click', data);
         });
         break;
       }
