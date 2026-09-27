@@ -153,6 +153,8 @@ Community website celebrating Polish professionals who earned all active AWS cer
 | Method | Path | Description |
 |--------|------|-------------|
 | POST | `/apply` | Member application → GitHub PR |
+
+> **Note:** the apply form requires a photo (client-side `required` + JS guard). Applications without a photo are blocked to prevent broken member cards on the site.
 | POST | `/article` | Article submission → GitHub PR |
 | POST | `/sponsor` | Sponsor inquiry → notification |
 | POST | `/admin` | Admin operations (authenticated) |
